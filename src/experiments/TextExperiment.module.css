@@ -1,0 +1,29 @@
+.scene { background: #e4e8dc; position: relative; }
+.scene[data-animated='true'] { height: calc(var(--scene-height) + var(--run)); }
+.stage { padding: 90px 7%; position: relative; }
+.scene[data-animated='true'] .stage { position: sticky; top: 0; height: var(--scene-height); display: flex; align-items: center; }
+.text { max-width: 1060px; width: 100%; margin: auto; font-size: var(--text-size); line-height: 1.13; letter-spacing: -.045em; overflow-wrap: anywhere; }
+.text p + p { margin-top: .62em; }
+.text p { white-space: pre-wrap; }
+.word { opacity: var(--waiting); }
+.word[data-accesa='true'] { opacity: 1; }
+.stageLabel, .stageFoot { position: absolute; left: 4.5%; right: 4.5%; display: flex; justify-content: space-between; gap: 20px; font: 10px/1.6 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: #535b4a; }
+.stageLabel { top: 30px; }
+.stageFoot { bottom: 28px; text-transform: none; letter-spacing: 0; }
+.stageFoot > span:last-child { font-size: 20px; line-height: 1; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; user-select: none; }
+.editor { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 13px 0; }
+.editor summary { font-size: 12px; font-weight: 400; padding: 0; }
+.editor label { font: 11px var(--mono); display: block; margin-top: 16px; }
+.editor textarea { display: block; width: 100%; margin-top: 8px; border: 1px solid #979e8d; border-radius: 2px; padding: 10px; background: var(--paper); font: 14px/1.5 Arial, sans-serif; resize: vertical; min-height: 66px; }
+@media (max-width: 639px) {
+  .stage { padding: 80px 6%; }
+  .stageLabel, .stageFoot { left: 6%; right: 6%; font-size: 9px; }
+  .stageLabel { top: 24px; }
+  .stageFoot { bottom: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene[data-animated='true'] { height: auto; }
+  .scene[data-animated='true'] .stage { position: relative; height: auto; }
+  .word { opacity: 1; }
+}

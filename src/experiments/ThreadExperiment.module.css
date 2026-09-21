@@ -1,0 +1,51 @@
+.scene { position: relative; background: #e4e8dc; }
+.scene[data-animated='true'] { height: calc(var(--window-height) + var(--run)); }
+.stage { position: relative; padding: 80px 6%; }
+.scene[data-animated='true'] .stage { position: sticky; top: 0; height: var(--window-height); display: flex; align-items: center; }
+.diagram { position: relative; width: 100%; max-width: 1160px; margin: auto; }
+.thread { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.thread path { stroke-linecap: round; }
+.guide { stroke: #a1ab92; }
+.ink { stroke: #3f570d; }
+.phases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 52px; padding: 0; margin: 0; list-style: none; }
+.phases li { min-width: 0; }
+.anchor { height: 178px; display: flex; justify-content: center; padding-top: 24px; position: relative; }
+.phases li:nth-child(2) .anchor { padding-top: 88px; }
+.point { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 42px; border: 2px solid #697659; border-radius: 50%; background: #e4e8dc; font: 12px var(--mono); }
+.point[data-reached='true'] { border-color: #3f570d; background: var(--accent); font: 23px Arial, sans-serif; }
+.copy { position: relative; overflow-wrap: anywhere; }
+.phaseLabel { font: 10px/1.6 var(--mono); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 16px; }
+.phaseLabel span { color: #535b4a; }
+.copy h3 { font-size: clamp(28px, 3vw, 44px); font-weight: 400; letter-spacing: -.05em; line-height: 1.07; margin-bottom: 22px; white-space: pre-wrap; }
+.copy p { font-size: 16px; line-height: 1.65; white-space: pre-wrap; }
+.stageLabel, .stageFoot { position: absolute; left: 4.5%; right: 4.5%; display: flex; justify-content: space-between; gap: 18px; font: 10px/1.6 var(--mono); color: #535b4a; }
+.stageLabel { top: 28px; text-transform: uppercase; letter-spacing: .05em; }
+.stageFoot { bottom: 28px; }
+.stageFoot > span:last-child { font-size: 20px; line-height: 1; }
+.editor { border-block: 1px solid var(--line); padding: 13px 0; }
+.editor summary { font-size: 12px; font-weight: 400; padding: 0; }
+.editor fieldset { border: 0; border-top: 1px solid var(--line); padding: 12px 0 0; margin: 22px 0 0; }
+.editor legend, .editor label { font: 11px var(--mono); }
+.editor legend { padding-right: 8px; }
+.editor label { display: block; margin-top: 10px; }
+.editor input, .editor textarea { width: 100%; margin-top: 8px; border: 1px solid #979e8d; border-radius: 2px; padding: 10px; background: var(--paper); font: 14px/1.5 Arial, sans-serif; }
+.editor textarea { resize: vertical; min-height: 80px; }
+@media (max-width: 900px) and (min-width: 640px) {
+  .phases { gap: 24px; }
+  .copy p { font-size: 14px; }
+}
+@media (max-width: 639px) {
+  .stage { padding: 80px 5%; }
+  .phases { display: flex; flex-direction: column; gap: 30px; }
+  .phases li { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 18px; }
+  .anchor, .phases li:nth-child(2) .anchor { padding-top: 0; height: auto; }
+  .phaseLabel { font-size: 9px; margin-bottom: 10px; }
+  .copy h3 { font-size: 27px; margin-bottom: 12px; }
+  .copy p { font-size: 14px; line-height: 1.5; }
+  .stageLabel, .stageFoot { left: 5%; right: 5%; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene[data-animated='true'] { height: auto; }
+  .scene[data-animated='true'] .stage { position: relative; height: auto; }
+  .ink { stroke-dashoffset: 0; }
+}

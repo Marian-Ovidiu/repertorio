@@ -1,0 +1,61 @@
+.scene { background: #e4e8dc; padding: 36px 7% 48px; }
+.overline, .end { display: flex; justify-content: space-between; gap: 24px; font: 11px/1.6 var(--mono); }
+.overline { border-bottom: 1px solid #a1ab92; padding-bottom: 24px; margin-bottom: 76px; text-transform: uppercase; letter-spacing: .05em; }
+.end { border-top: 1px solid #a1ab92; padding-top: 24px; margin-top: 80px; }
+.diagram { position: relative; max-width: 1200px; margin: auto; }
+.thread { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.thread path { stroke-linecap: round; stroke-linejoin: round; }
+.guide { stroke: #a1ab92; }
+.ink { stroke: #3f570d; }
+.phases { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--block-gap); }
+.phases > li { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.block { grid-column: 1 / 8; overflow-wrap: anywhere; }
+.phases > li:nth-child(2) .block { grid-column: 6 / 13; }
+.point { position: absolute; left: 75%; top: 42px; transform: translateX(-50%); width: 42px; height: 42px; border: 2px solid #697659; border-radius: 50%; display: grid; place-items: center; background: #e4e8dc; font: 12px var(--mono); }
+.phases > li:nth-child(2) .point { left: 25%; }
+.point[data-reached='true'] { background: var(--accent); border-color: #3f570d; font: 23px Arial, sans-serif; }
+.label { font: 11px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 28px; }
+.block h3 { font-size: clamp(48px, 7.5vw, 108px); line-height: .99; font-weight: 400; letter-spacing: -.065em; white-space: pre-wrap; margin-bottom: 36px; }
+.description { max-width: 500px; font-size: 21px; line-height: 1.6; white-space: pre-wrap; }
+.phases > li:nth-child(2) h3 { font-size: clamp(42px, 4vw, 58px); max-width: 480px; }
+.phases > li:nth-child(3) h3 { font-size: clamp(48px, 6vw, 84px); }
+.example { margin: 0; }
+.sheet { background: #f5f4ed; border: 1px solid #a1ab92; padding: 28px; box-shadow: 10px 12px 0 #cad2bd; }
+.sheetHead { display: flex; justify-content: space-between; gap: 20px; font: 10px/1.5 var(--mono); padding-bottom: 22px; border-bottom: 1px solid #a1ab92; }
+.sheet h4 { font-size: 30px; font-weight: 400; letter-spacing: -.035em; line-height: 1.15; margin: 28px 0; }
+.sheet dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.sheet dt { font: 10px/1.5 var(--mono); color: #535b4a; }
+.sheet dd { margin: 6px 0 0; font-size: 13px; line-height: 1.5; }
+.orderSteps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; margin-top: 28px; }
+.orderSteps > span { background: #e4e8dc; padding: 14px 12px; font: 11px/1.6 var(--mono); }
+.orderSteps > span:nth-child(2) { background: var(--accent); }
+.orderSteps strong, .orderSteps small { display: block; }
+.orderSteps strong { margin-top: 16px; font: 13px/1.4 Arial, sans-serif; }
+.orderSteps small { font: 10px/1.5 Arial, sans-serif; margin-top: 6px; }
+.sheetNote { font: 11px/1.5 var(--mono); margin-top: 24px; }
+.example figcaption { max-width: 520px; font-size: 17px; line-height: 1.6; margin-top: 30px; white-space: pre-wrap; }
+.closing { font: 12px/1.7 var(--mono); border-top: 1px solid #a1ab92; padding-top: 24px; margin-top: 40px; max-width: 500px; }
+@media (max-width: 639px) {
+  .scene { padding: 28px 5% 32px; }
+  .overline, .end { font-size: 9px; gap: 12px; }
+  .overline { margin-bottom: 44px; }
+  .end { margin-top: 48px; }
+  .phases > li { display: block; padding-left: 62px; }
+  .point, .phases > li:nth-child(2) .point { left: 21px; top: 20px; }
+  .block h3, .phases > li:nth-child(3) h3 { font-size: 48px; margin-bottom: 24px; }
+  .phases > li:nth-child(2) h3 { font-size: 36px; }
+  .label { font-size: 9px; margin-bottom: 22px; }
+  .description, .example figcaption { font-size: 16px; line-height: 1.6; }
+  .sheet { padding: 18px; box-shadow: 5px 6px 0 #cad2bd; }
+  .sheetHead { flex-direction: column; gap: 6px; }
+  .sheet h4 { font-size: 26px; }
+  .sheet dl { grid-template-columns: 1fr; gap: 12px; }
+  .sheet dl > div { display: flex; justify-content: space-between; gap: 12px; }
+  .sheet dd { font-size: 11px; margin: 0; text-align: right; }
+  .orderSteps { grid-template-columns: 1fr; }
+  .orderSteps > span { padding: 12px; }
+  .orderSteps strong { display: inline; margin-left: 8px; }
+  .orderSteps br { display: none; }
+  .closing { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .ink { stroke-dashoffset: 0; } }

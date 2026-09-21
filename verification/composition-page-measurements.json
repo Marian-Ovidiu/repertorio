@@ -1,0 +1,221 @@
+[
+  {
+    "profile": "desktop",
+    "width": 1440,
+    "height": 900,
+    "animated": {
+      "total": 4659,
+      "sections": [
+        {
+          "id": "introduzione",
+          "height": 911,
+          "top": 177
+        },
+        {
+          "id": "progetti",
+          "height": 2461,
+          "top": 1088
+        },
+        {
+          "id": "servizi",
+          "height": 767,
+          "top": 3549
+        },
+        {
+          "id": "chiusura",
+          "height": 277,
+          "top": 4316
+        }
+      ],
+      "cards": [
+        537,
+        537,
+        537
+      ],
+      "overflow": false,
+      "textAnimated": "true",
+      "cardsAnimated": "true"
+    },
+    "normal": {
+      "total": 3751,
+      "sections": [
+        {
+          "id": "introduzione",
+          "height": 461,
+          "top": 177
+        },
+        {
+          "id": "progetti",
+          "height": 2003,
+          "top": 638
+        },
+        {
+          "id": "servizi",
+          "height": 767,
+          "top": 2641
+        },
+        {
+          "id": "chiusura",
+          "height": 277,
+          "top": 3408
+        }
+      ],
+      "cards": [
+        537,
+        537,
+        537
+      ],
+      "overflow": false,
+      "textAnimated": "false",
+      "cardsAnimated": "false"
+    },
+    "extra": 908,
+    "errors": []
+  },
+  {
+    "profile": "mobile",
+    "width": 390,
+    "height": 844,
+    "animated": {
+      "total": 4591,
+      "sections": [
+        {
+          "id": "introduzione",
+          "height": 715,
+          "top": 176
+        },
+        {
+          "id": "progetti",
+          "height": 2150,
+          "top": 891
+        },
+        {
+          "id": "servizi",
+          "height": 1104,
+          "top": 3041
+        },
+        {
+          "id": "chiusura",
+          "height": 362,
+          "top": 4146
+        }
+      ],
+      "cards": [
+        470,
+        470,
+        470
+      ],
+      "overflow": false,
+      "textAnimated": "true",
+      "cardsAnimated": "true"
+    },
+    "normal": {
+      "total": 3997,
+      "sections": [
+        {
+          "id": "introduzione",
+          "height": 445,
+          "top": 176
+        },
+        {
+          "id": "progetti",
+          "height": 1826,
+          "top": 621
+        },
+        {
+          "id": "servizi",
+          "height": 1104,
+          "top": 2447
+        },
+        {
+          "id": "chiusura",
+          "height": 362,
+          "top": 3552
+        }
+      ],
+      "cards": [
+        470,
+        470,
+        470
+      ],
+      "overflow": false,
+      "textAnimated": "false",
+      "cardsAnimated": "false"
+    },
+    "extra": 594,
+    "errors": []
+  },
+  {
+    "profile": "desktop-basso",
+    "width": 1440,
+    "height": 500,
+    "animated": {
+      "total": 3751,
+      "sections": [
+        {
+          "id": "introduzione",
+          "height": 461,
+          "top": 177
+        },
+        {
+          "id": "progetti",
+          "height": 2003,
+          "top": 638
+        },
+        {
+          "id": "servizi",
+          "height": 767,
+          "top": 2641
+        },
+        {
+          "id": "chiusura",
+          "height": 277,
+          "top": 3408
+        }
+      ],
+      "cards": [
+        537,
+        537,
+        537
+      ],
+      "overflow": false,
+      "textAnimated": "false",
+      "cardsAnimated": "false"
+    },
+    "normal": {
+      "total": 3751,
+      "sections": [
+        {
+          "id": "introduzione",
+          "height": 461,
+          "top": 177
+        },
+        {
+          "id": "progetti",
+          "height": 2003,
+          "top": 638
+        },
+        {
+          "id": "servizi",
+          "height": 767,
+          "top": 2641
+        },
+        {
+          "id": "chiusura",
+          "height": 277,
+          "top": 3408
+        }
+      ],
+      "cards": [
+        537,
+        537,
+        537
+      ],
+      "overflow": false,
+      "textAnimated": "false",
+      "cardsAnimated": "false"
+    },
+    "extra": 0,
+    "errors": []
+  }
+]

@@ -1,0 +1,48 @@
+.scene { background: #e6e7dc; }
+.instructions { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 24px 4.5%; }
+.instructions > p { max-width: 570px; font-size: 13px; line-height: 1.65; }
+.positions { display: flex; flex-wrap: wrap; gap: 8px; }
+.positions button { min-height: 44px; border: 1px solid #a9b09c; border-radius: 3px; background: var(--paper); padding: 10px 14px; font-size: 12px; }
+.positions button:hover { background: #dce3cc; }
+.stage { position: relative; height: clamp(360px, 70svh, 660px); margin: 0 4.5%; overflow: clip; background: #f0eee1; }
+.art { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.dark { position: absolute; inset: 0 49% 0 0; background: #242e2a; }
+.artLabel { position: absolute; left: 4%; top: 6%; color: #dce3cc; font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.type { position: absolute; top: 17%; left: 4%; color: #f2f0e6; font-size: clamp(60px, min(10vw, 20svh), 146px); line-height: .88; letter-spacing: -.07em; }
+.type em { color: var(--accent); font-style: normal; }
+.sculpture { position: absolute; width: 53%; height: 108%; right: 0; top: -4%; }
+.rules { position: absolute; right: 3%; bottom: 13%; width: 13%; display: grid; gap: 9px; }
+.rules i { height: 1px; background: #37432f; }
+.rules span { margin-top: 6px; font: 9px/1.8 var(--mono); }
+.artFooter { position: absolute; bottom: 5%; left: 4%; right: 4%; display: flex; justify-content: space-between; font: 9px var(--mono); }
+.artFooter span:first-child { color: #dce3cc; }
+.panel { position: absolute; left: 0; top: 0; width: clamp(260px, 29vw, 390px); height: clamp(240px, 34svh, 320px); pointer-events: none; }
+.surface { position: absolute; inset: 0; border-radius: 24px; background: rgb(231 241 217 / var(--tint)); -webkit-backdrop-filter: blur(var(--blur)) saturate(1.15); backdrop-filter: blur(var(--blur)) saturate(1.15); border: 1px solid rgb(255 255 247 / calc(var(--edge) * .85)); box-shadow: inset 0 1px 0 rgb(255 255 247 / calc(var(--edge) * .7)), 0 14px 30px rgb(14 27 16 / .16); }
+.surface > span { position: absolute; bottom: 24px; left: 24px; font: 11px var(--mono); color: #28342a; background: #e7efdb; padding: 5px 7px; border-radius: 2px; }
+.handle { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; min-width: 154px; min-height: 44px; padding: 8px 14px; border: 1px solid #6f7a63; border-radius: 30px; background: #f3f1e9; color: #242a28; font-size: 12px; pointer-events: auto; touch-action: none; cursor: grab; user-select: none; }
+.handle > span { font-size: 24px; }
+.handle:focus-visible { outline: 3px solid #242a28; outline-offset: 3px; box-shadow: 0 0 0 7px #d5fa54; }
+.panel[data-dragging='true'] .handle { cursor: grabbing; }
+.scene[data-opaque='true'] .surface, .scene[data-supported='false'] .surface { background: #e7efdb; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.caption { display: flex; justify-content: space-between; gap: 32px; padding: 22px 4.5% 30px; font-size: 12px; line-height: 1.65; }
+.caption > p:first-child { max-width: 610px; }.caption > p:last-child { font: 10px/1.7 var(--mono); max-width: 290px; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .surface { background: #e7efdb; }
+}
+@media (max-width: 900px) {
+  .instructions { align-items: start; flex-direction: column; gap: 18px; }
+}
+@media (max-width: 639px) {
+  .instructions { padding: 22px 5%; }.instructions > p { font-size: 12px; }
+  .positions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }.positions button { min-height: 46px; }
+  .stage { height: clamp(460px, 68svh, 560px); margin: 0 5%; }
+  .dark { inset: 0 0 44% 0; }.artLabel { left: 7%; top: 5%; font-size: 8px; }
+  .type { left: 7%; top: 13%; font-size: clamp(58px, 18vw, 82px); }
+  .sculpture { width: 84%; height: 58%; top: 44%; right: -5%; }
+  .rules { bottom: 8%; right: auto; left: 7%; width: 24%; gap: 7px; }.rules span { font-size: 7px; }
+  .artFooter { display: none; }
+  .panel { width: 205px; height: 224px; max-width: calc(100% - 24px); }
+  .surface { border-radius: 20px; }.surface > span { bottom: 18px; left: 18px; font-size: 9px; }
+  .caption { display: grid; gap: 14px; padding-inline: 5%; }
+}
+.scene[data-reduced='true'] *, .scene[data-reduced='true'] *::before, .scene[data-reduced='true'] *::after { transition: none !important; animation: none !important; }
