@@ -34,6 +34,12 @@ La preview ascolta solo su `127.0.0.1:4173`. Non viene pubblicato nulla.
 Vite gestisce anche l’apertura diretta e il ricaricamento degli URL.
 Le impostazioni sono temporanee: ricaricando la pagina tornano quelle iniziali.
 
+Su Vercel, `vercel.json` nella stessa cartella di `package.json` inoltra gli
+URL interni a `index.html`, così React può selezionare la prova richiesta.
+Senza questa regola la home funziona, ma i link diretti e i ricaricamenti delle
+prove restituiscono 404. La modifica richiede un nuovo deployment per diventare
+attiva in produzione. Riferimento: [Vite SPA su Vercel](https://vercel.com/docs/frameworks/frontend/vite#using-vite-to-make-spas).
+
 La [composizione](COMPOSIZIONE.md) si osserva come una pagina di studio:
 introduzione, tre progetti dimostrativi, servizi e chiusura. “Opzioni della
 prova” contiene soltanto confronto globale, movimento ridotto e ripristino;
